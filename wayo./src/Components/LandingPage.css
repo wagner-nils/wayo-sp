@@ -1,0 +1,126 @@
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    /* Verhindert Scrollbars, falls das Bild größer als der Viewport ist */
+}
+
+.BG {
+    position: fixed;
+    /* oder absolute, wenn Sie keinen Scroll wünschen */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url('../Pictures/png-frames/Fotolia_72116619_L.png');
+    /* Pfad zu Ihrem Bild */
+    background-position: center center;
+    /* Zentriert das Bild */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Deckt den gesamten Bereich ab, ohne das Seitenverhältnis zu verlieren */
+    background-attachment: fixed;
+    /* Bild bleibt beim Scrollen an der gleichen Stelle */
+}
+
+
+.cms {
+    position: absolute;
+    top: 13em;
+    right: 15em;
+    width: 40%;
+    height: auto;
+    z-index: 1;
+    background-repeat: no-repeat;
+    animation: fadein 2s;
+}
+
+.logo {
+    position: absolute;
+    bottom: 3em;
+    right: 3em;
+    width: 11%;
+    z-index: 1;
+    height: auto;
+    background-repeat: no-repeat;
+    animation: fadein 2s;
+}
+
+.loginLP {
+    position: fixed;
+    width: 5em;
+    top: 39em;
+    right: 13em;
+    z-index: 2;
+    padding: 7.5px 20px;
+    background-color: #959595;
+    border: 2px solid #959595;
+    /* White border */
+    color: #FFF;
+    font-style: normal;
+    cursor: pointer;
+    border-radius: 40px;
+    text-align: center;
+    animation: fadein 2s;
+    font: 1.2em 'Outfit', sans-serif;
+    font-weight: 600;
+}
+
+.loginLP:hover {
+    background-color: #FFF;
+    color: #000;
+}
+
+a:hover {
+    color: #030D2A;
+}
+
+a {
+    color: #FFF;
+    font-style: bold;
+    text-decoration: none;
+}
+
+.registerLP {
+    position: absolute;
+    width: 5em;
+    top: 39em;
+    right: 23em;
+    z-index: 2;
+    padding: 7.5px 20px;
+    background-color: #030D2A;
+    border: 2px solid #FFF;
+    /* White border */
+    color: #FFF;
+    font-style: normal;
+    cursor: pointer;
+    border-radius: 40px;
+    text-align: center;
+    animation: fadein 2s;
+    font: 1.2em 'Outfit', sans-serif;
+    font-weight: 600;
+}
+
+.registerLP:hover {
+    background-color: #FFF;
+    color: #000;
+}
+
+.Rectangle1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}

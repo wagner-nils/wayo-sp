@@ -1,7 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 function LoginPage() {
-  return <div>Please Log In</div>;
+  return <>
+    <div>Login</div>
+    
+    
+    </>;
+
 }
 
 export default LoginPage;
