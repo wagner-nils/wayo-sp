@@ -7,6 +7,7 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <img src={logo} alt="logo" className='logoNB' />
+      <div className='sHeaders'>Menu</div>
       <NavLink
         to="/dashboard"
         className={({ isActive }) =>

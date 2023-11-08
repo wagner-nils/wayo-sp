@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./Components/LandingPage";
 import LoginPage from "./Components/LoginPage";
-import Dashboard from "./Components/Dashboard";
-import ExpenseTracker from "./Components/ExpenseTracker";
-import OrderTimeline from "./Components/OrderTimeline";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import ExpenseTracker from "./Components/Expenses/ExpenseTracker";
+import OrderTimeline from "./Components/Orders/OrdersList/OrderTimeline";
 import NavBar from "./Components/NavBar";
 
 function AppRouter() {

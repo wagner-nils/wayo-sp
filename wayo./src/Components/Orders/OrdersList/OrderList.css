@@ -1,0 +1,105 @@
+.orderList {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.NextUp {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-top: 1em;
+
+}
+
+.FirstItem {
+    background-color: #ED8235;
+    border-radius: 5px;
+    margin-top: 15px;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+}
+
+.BigDate1 {
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.Thread {
+    background-color: #ED8235;
+    border-radius: 4px;
+    margin-top: 30px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: 170px;
+}
+
+.BigDate2 {
+    font-size: 2.8em;
+    font-weight: bold;
+    display: block;
+    width: 150px;
+    text-align: center;
+}
+
+.Title {
+    font-size: 2.4em;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 2.8em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.Date {
+    font-size: 14pt;
+    margin-bottom: 0;
+    color: white;
+}
+
+.Venue {
+    font-size: 14pt;
+    margin-top: 7px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.Content {
+    flex: 1;
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-left: 20px;
+
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top: 2px solid rgba(227, 227, 227, 0.562);
+    border-right: 2px solid rgba(227, 227, 227, 0.562);
+    border-bottom: 2px solid rgba(227, 227, 227, 0.562);
+    border-left: none;
+}
+
+.timeLow {
+    margin: 0;
+    margin-top: 10px;
+    color: #484848;
+}
+
+.venLow {
+    margin: 0;
+    margin-top: 5px;
+    color: #484848;
+}
