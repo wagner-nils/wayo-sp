@@ -1,15 +1,17 @@
 import React from "react";
-// import "./OrderList";
+import { useState } from "react";
+import { useEffect } from "react";
+import OrderList from "./OrderList";
 
 
 function OrderTimeline() {
-  // const [orders, setOrders] = useState([]); // State for storing fetched orders, as discussed with Seb
+  const [orders, setOrders] = useState([]); // State for storing fetched orders, as discussed with Seb
 
-  // useEffect(() => {
-  //   fetch('http://localhost:30001/orders')
-  //     .then((response) => response.json())
-  //     .then((data) => setOrders(data));
-  // }, []);
+  useEffect(() => {
+    fetch('http://localhost:3001/orders')
+      .then((response) => response.json())
+      .then((data) => setOrders(data));
+  }, []);
 
   // const addOrder = (order) => {
   //   fetch('http://localhost:3001/orders', {
@@ -28,7 +30,7 @@ function OrderTimeline() {
   return (
     <>
       <div>View your Order Timeline</div>;
-      {/* <div><OrderList orders={orders} /> </div> */}
+      <div><OrderList orders={orders} /> </div>
 
     </>
 
