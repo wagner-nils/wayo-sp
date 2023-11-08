@@ -1,0 +1,38 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100vh;
+    /* full height */
+    box-sizing: border-box;
+    background: #030D2A;
+    /* light grey background */
+    width: 200px;
+    /* fixed width for the navbar */
+    position: fixed;
+    /* fixed position */
+}
+
+.nav-link:hover {
+    background-color: rgb(195, 191, 167);
+    color: #030D2A;
+    border-radius: 40px;
+}
+
+.nav-link {
+    padding: 10px 15px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-link-active {
+    font-weight: bold;
+    font-size: larger;
+    color: rgb(195, 191, 167);
+}
+
+.logoNB {
+    padding-top: 1em;
+    padding-bottom: 2em;
+}

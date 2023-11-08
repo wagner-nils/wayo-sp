@@ -1,16 +1,38 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './NavBar.css';
+import logo from '../Pictures/logos/wayo..png';
 
-function NavBar() {
+const NavBar = () => {
   return (
-    <nav>
-      <ul>
-        <li><Link to="/dashboard">Dashboard</Link></li>
-        <li><Link to="/expenses">Expenses</Link></li>
-        <li><Link to="/orders">Orders</Link></li>
-      </ul>
-    </nav>
+    <div className="navbar">
+      <img src={logo} alt="logo" className='logoNB' />
+      <NavLink
+        to="/dashboard"
+        className={({ isActive }) =>
+          isActive ? 'nav-link nav-link-active' : 'nav-link'
+        }
+      >
+        Dashboard
+      </NavLink>
+      <NavLink
+        to="/expenses"
+        className={({ isActive }) =>
+          isActive ? 'nav-link nav-link-active' : 'nav-link'
+        }
+      >
+        Expenses
+      </NavLink>
+      <NavLink
+        to="/orders"
+        className={({ isActive }) =>
+          isActive ? 'nav-link nav-link-active' : 'nav-link'
+        }
+      >
+        Orders
+      </NavLink>
+    </div>
   );
-}
+};
 
 export default NavBar;
