@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import OrderList from "./OrderList";
 import HeaderInfos from "./HeaderInfo";
-import AddOrder from "./AddOrder"; // Make sure this component is correctly implemented
+import AddOrder from "./AddOrder";
 import './OrderTimeline.css';
 
 function OrderTimeline() {
   const [orders, setOrders] = useState([]);
-  const [showAddOrder, setShowAddOrder] = useState(false); // State to control the visibility of the AddOrder component
+  const [showAddOrder, setShowAddOrder] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:3001/orders')
@@ -38,8 +38,9 @@ function OrderTimeline() {
       {/* 2/3 to the left section */}
       <div className="LeftSection">
         <div className="HeaderInfo"><HeaderInfos orders={orders} /></div>
-        <div className="AddButton">
-          <button onClick={handleAddOrderClick}>Add Order</button>
+        <div className="DivList">
+          <div className="OrderListTitle">Orders</div>
+          <button className="AddButton" onClick={handleAddOrderClick}>Add Order</button>
         </div>
         <div className="OrderList"><OrderList orders={orders} /></div>
       </div>
