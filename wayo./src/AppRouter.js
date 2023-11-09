@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "./Components/LandingPage";
-import LoginPage from "./Components/LoginPage";
+import LandingPage from "./Components/StartupPages/LandingPage";
+import LoginPage from "./Components/StartupPages/LoginPage";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import ExpenseTracker from "./Components/Expenses/ExpenseTracker";
 import OrderTimeline from "./Components/Orders/OrdersList/OrderTimeline";

@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './LandingPage.css';
 // import FadePic from '../Pictures/frames/FadePic.svg';
-import FadePic from '../Pictures/png-frames/Fotolia_72116619_L.png';
-import cms from '../Pictures/frames/controlling made simple..svg';
-import logo from '../Pictures/logos/wayo..png';
+import FadePic from '../../Pictures/png-frames/Fotolia_72116619_L.png';
+import cms from '../../Pictures/frames/controlling made simple..svg';
+import logo from '../../Pictures/logos/wayo..png';
 
 
 function LandingPage() {

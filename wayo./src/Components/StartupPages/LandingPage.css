@@ -10,14 +10,20 @@
 
 .BG {
     position: fixed;
-    /* oder absolute, wenn Sie keinen Scroll wünschen */
     top: -7.5em;
     left: -5em;
     width: 100%;
     min-height: 112.5vh;
     z-index: -1;
+    background-size: cover;
 }
 
+.cms,
+.logo,
+.loginLP,
+.registerLP {
+    animation: fadein 2s;
+}
 
 .cms {
     position: fixed;
@@ -27,7 +33,6 @@
     height: auto;
     z-index: 1;
     background-repeat: no-repeat;
-    animation: fadein 2s;
 }
 
 .logo {
@@ -38,57 +43,42 @@
     z-index: 1;
     height: auto;
     background-repeat: no-repeat;
-    animation: fadein 2s;
 }
 
-.loginLP {
-    position: fixed;
-    width: 5em;
-    top: 38em;
-    right: 13em;
-    z-index: 2;
-    padding: 7.5px 20px;
-    background-color: #959595;
-    border: 2px solid #959595;
-    /* White border */
-    color: #FFF;
-    font-style: normal;
-    cursor: pointer;
-    border-radius: 40px;
-    text-align: center;
-    animation: fadein 2s;
-    font: 1.2em 'Outfit', sans-serif;
-    font-weight: 600;
-}
-
+.loginLP,
 .registerLP {
     position: fixed;
     width: 5em;
     top: 38em;
-    right: 23em;
     z-index: 2;
     padding: 7.5px 20px;
-    background-color: #030D2A;
-    border: 2px solid #FFF;
-    /* White border */
     color: #FFF;
     font-style: normal;
     cursor: pointer;
     border-radius: 40px;
     text-align: center;
-    animation: fadein 2s;
     font: 1.2em 'Outfit', sans-serif;
     font-weight: 600;
+    animation: fadein 2s;
 }
 
-.loginLP:hover {
-    background-color: #FFF;
-    color: #030D2A;
+.loginLP {
+    right: 13em;
+    background-color: #959595;
+    border: 2px solid #959595;
 }
 
+.registerLP {
+    right: 23em;
+    background-color: #030D2A;
+    border: 2px solid #FFF;
+}
+
+.loginLP:hover,
 .registerLP:hover {
     background-color: #FFF;
     color: #030D2A;
+    border-color: white;
 }
 
 a:hover {
@@ -106,4 +96,42 @@ a {
     width: 100%;
     height: 100%;
     z-index: 1;
+}
+
+@media (max-width: 768px) {
+
+    .BG,
+    .cms,
+    .logo {
+        position: static;
+        width: auto;
+    }
+
+    .cms,
+    .logo {
+        width: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .loginLP,
+    .registerLP {
+        width: auto;
+        top: auto;
+        right: 10%;
+        font-size: 1em;
+    }
+
+    .loginLP {
+        bottom: 60px;
+    }
+
+    .registerLP {
+        bottom: 20px;
+    }
+
+    .Rectangle1 {
+        min-height: 100vh;
+    }
 }

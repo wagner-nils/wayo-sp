@@ -12,7 +12,6 @@
 .nav-link:hover {
     background-color: rgb(195, 191, 167);
     color: #030D2A;
-    border-radius: 40px;
 }
 
 .nav-link {
@@ -20,6 +19,8 @@
     margin: 5px 0;
     text-decoration: none;
     color: white;
+    transition: .2s ease-in;
+    border-radius: 40px;
 }
 
 .nav-link-active {
