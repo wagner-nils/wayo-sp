@@ -17,17 +17,16 @@
 .RightSection {
     padding: 1em;
     margin-left: 63em;
-    min-width: 15em; /* Ensures the right section is never smaller than 15em */
+    min-width: 15em;
 }
 
 
 .LeftSection {
     padding: 1em;
     padding-top: 6em;
-    margin-left: 17.5em; /* Fixed left margin */
-    width: calc(75vw - 17.5em); /* 3/4ths of the viewport width minus the left margin */
+    margin-left: 17.5em;
+    width: calc(75vw - 17.5em);
     border-color: rgb(195, 191, 167);
     border-right-style: solid;
     border-width: 1px;
 }
-

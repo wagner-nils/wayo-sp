@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import OrderList from "./OrderList";
+import HeaderInfos from "./HeaderInfo";
 import './OrderTimeline.css';
 
 
@@ -35,17 +36,21 @@ function OrderTimeline() {
       {/* 2/3 to the left section */}
       <div className="LeftSection">
 
+      <div className="HeaderInfo"><HeaderInfos orders={orders} /> </div>
 
-        <div className="OrderList"><OrderList orders={orders} /> </div>
-      </div>
+      <div className="OrderList"><OrderList orders={orders} /> </div>
+
+
+
+      </div >
 
 
 
       {/* 1/3 to the right section */}
-      <div className="RightSection">
+      < div className="RightSection" >
 
 
-      </div>
+      </div >
     </>
 
   )

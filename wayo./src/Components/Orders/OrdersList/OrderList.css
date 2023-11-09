@@ -2,7 +2,7 @@
 
 .list .box {
     height: 10em;
-    width: 100%;
+    width: 100%;;
 }
 
 .box .overlap-group {
@@ -11,6 +11,8 @@
     box-shadow: 1px 4px 10px #00000009;
     position: relative;
     padding: 15px;
+    margin-right: 2em;
+
 }
 
 .box .overlap-group:hover {
