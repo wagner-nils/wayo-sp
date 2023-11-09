@@ -111,7 +111,7 @@ function AddOrder({ onClose, onSubmit }) {
                         <input type="text" name="orderAcquisition" value={newOrder.orderAcquisition} onChange={handleChange} />
                     </label>
                     <br />
-                    <button type="submit">Add Order</button>
+                    <button className='submit' type="submit">Add Order</button>
                 </form>
             </div>
         </div>

@@ -35,10 +35,9 @@
     width: 100%;
     height: 4rem;
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    padding-right: em;
-
+    align-items: center;
 }
 
 
@@ -55,6 +54,7 @@
     margin-left: 1em;
     margin-top: 1em;
     font-family: 'Outfit', sans-serif;
+    margin-right: 2em;
 }
 
 .AddButton:hover {
@@ -70,4 +70,15 @@
     margin-left: 1em;
     margin-top: 1em;
     font-family: 'Outfit', sans-serif;
+    transition: 0.25s;
+}
+
+.OrderListTitle{
+    font-size: 2em;
+    font-weight: 600;
+    color: #030D2A;
+    margin-top: 1em;
+    font-family: 'Outfit', sans-serif;
+    text-align: center; 
+    height: 100%;
 }

@@ -44,17 +44,17 @@ function OrderTimeline() {
         </div>
         <div className="OrderList"><OrderList orders={orders} /></div>
       </div>
-
-      {/* 1/3 to the right section */}
-      <div className="RightSection">
-      </div>
-
       {showAddOrder && (
         <AddOrder
           onClose={() => setShowAddOrder(false)}
           onSubmit={addOrder}
         />
       )}
+
+      {/* 1/3 to the right section */}
+      <div className="RightSection">
+      </div>
+
     </>
   );
 };

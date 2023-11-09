@@ -24,3 +24,40 @@
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+input{
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.submit{
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #030D2A;
+    color: white;
+    font-weight: bold;
+}
+
+.submit:hover{
+    background-color: white;
+    color: #030D2A;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
