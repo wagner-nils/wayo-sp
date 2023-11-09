@@ -9,6 +9,10 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    orderDescription: {
+        type: String,
+        required: false
+    },
     orderAmount: {
         type: Number,
         required: true
@@ -38,6 +42,10 @@ const orderSchema = new mongoose.Schema({
         required: true
     },
     orderCompany: {
+        type: String,
+        required: false
+    },
+    orderCompanyAbbreviation: {
         type: String,
         required: false
     },

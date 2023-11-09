@@ -2,10 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import OrderList from "./OrderList";
+import './OrderTimeline.css';
 
 
 function OrderTimeline() {
-  const [orders, setOrders] = useState([]); // State for storing fetched orders, as discussed with Seb
+  const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3001/orders')
@@ -29,9 +30,22 @@ function OrderTimeline() {
 
   return (
     <>
-      <div>View your Order Timeline</div>;
-      <div><OrderList orders={orders} /> </div>
+      <div className="header">Order timeline</div>
 
+      {/* 2/3 to the left section */}
+      <div className="LeftSection">
+
+
+        <div className="OrderList"><OrderList orders={orders} /> </div>
+      </div>
+
+
+
+      {/* 1/3 to the right section */}
+      <div className="RightSection">
+
+
+      </div>
     </>
 
   )

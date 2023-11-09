@@ -1,4 +1,99 @@
-.Order{
-    padding: 3em;
-    padding-left: 20em;
+/* .Order {
+    padding: 1em;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 1.5em;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.list .box {
+    height: 10em;
+    width: 100%;
+    margin-bottom: 5px;
 }
+
+.box .overlap-group:hover {
+    background-color: #f9f9f9;
+    box-shadow: 1px 4px 10px #0000002f;
+    cursor: pointer;
+}
+
+.box .overlap-group {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 1px 4px 10px #00000009;
+    position: relative;
+    padding: 15px;
+}
+
+.box .orderCompanyAbbreviation {
+    height: 80px;
+    width: 80px;
+    box-shadow: 1px 4px 10px #00000013;
+    border-radius: 30%;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-left: 42px;
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Adjust for its own dimensions */
+    color: #030D2A;
+    font-family: Outfit, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.box .orderName {
+    color: #030D2A;
+    font-family: Outfit, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-left: 100px;
+
+}
+
+.box .orderDescription {
+    color: #959595;
+    font-family: Outfit, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 100px;
+    margin-top: 3px;
+}
+
+.box .orderDeadline {
+    color: #959595;
+    font-family: Outfit, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 100px;
+    margin-top: 3px;
+}
+
+.box .orderCompany {
+    color: #030D2A;
+    font-family: Outfit, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 101px;
+    margin-BOTTOM: 2px;
+}
+
+/* .box .text-wrapper-3, .box .text-wrapper, .box .p, .box .text-wrapper-6, .box .text-wrapper-5 {
+    color: #959595;
+    font-family: "Source Sans Pro-Regular", Helvetica;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 19.8px;
+    margin-bottom: 5px; 
+}
+
+.box .text-wrapper-3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 26.4px;
+    margin-bottom: 10px;
+} */

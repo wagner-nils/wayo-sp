@@ -1,0 +1,33 @@
+.header {
+    padding-top: 1.25em;
+    margin-left: 9.75em;
+    padding-bottom: 0.35em;
+    width: 100%;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #030D2A;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(195, 191, 167);
+    position: fixed;
+    background-color: white;
+    z-index: 1;
+}
+
+.RightSection {
+    padding: 1em;
+    margin-left: 63em;
+    min-width: 15em; /* Ensures the right section is never smaller than 15em */
+}
+
+
+.LeftSection {
+    padding: 1em;
+    padding-top: 6em;
+    margin-left: 17.5em; /* Fixed left margin */
+    width: calc(75vw - 17.5em); /* 3/4ths of the viewport width minus the left margin */
+    border-color: rgb(195, 191, 167);
+    border-right-style: solid;
+    border-width: 1px;
+}
+
