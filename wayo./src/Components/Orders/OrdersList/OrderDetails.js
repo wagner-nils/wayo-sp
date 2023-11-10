@@ -22,24 +22,24 @@ function OrderDetails({ order, onClose, onDelete, onUpdate }) {
                     <div className="EditForm">
                         <input
                             type="text"
-                            name="OrderName"
+                            name="orderName"
                             value={editData.orderName}
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name="OrderDescription"
+                            name="orderDescription"
                             value={editData.orderDescription}
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name="OrderAmount"
+                            name="orderAmount"
                             value={editData.orderAmount}
                             onChange={handleInputChange}
                         />
                         <select
-                            name="OrderVAT"
+                            name="orderVAT"
                             value={editData.orderVAT}
                             onChange={handleInputChange}
                         >
@@ -48,67 +48,67 @@ function OrderDetails({ order, onClose, onDelete, onUpdate }) {
                         </select>
                         <input
                             type="text"
-                            name="OrderAddress"
+                            name="orderAddress"
                             value={editData.orderAddress}
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name="OrderCity"
+                            name="orderCity"
                             value={editData.orderCity}
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name="OrderDeadline"
+                            name="orderDeadline"
                             value={editData.orderDeadline}
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name="OrderType"
+                            name="orderType"
                             value={editData.orderType}
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name="OrderStatus"
+                            name="orderStatus"
                             value={editData.orderStatus}
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name="OrderCompany"
+                            name="orderCompany"
                             value={editData.orderCompany}
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name="OrderCompanyAbbreviation"
+                            name="orderCompanyAbbreviation"
                             value={editData.orderCompanyAbbreviation}
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name="OrderContact"
+                            name="orderContact"
                             value={editData.orderContact}
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name="OrderPhone"
+                            name="orderPhone"
                             value={editData.orderPhone}
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name="OrderDate"
+                            name="orderDate"
                             value={editData.orderDate}
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name="OrderAcquisition"
+                            name="orderAcquisition"
                             value={editData.orderAcquisition}
                             onChange={handleInputChange}
                         />

@@ -2,6 +2,7 @@
     from {
         right: -25vw;
     }
+
     to {
         right: 0;
     }
@@ -10,7 +11,7 @@
 .DetailsContainer {
     color: #030D2A;
     font-family: 'outfit', sans-serif;
-    height: 42vw; 
+    height: 42vw;
     width: calc(25vw - 7em);
     box-shadow: 1px 4px 10px #00000013;
     border-radius: 15px 0 0 15px;
@@ -19,30 +20,30 @@
     padding: 1.5em;
     padding-right: 2em;
     top: 7em;
-    right: -25vw; 
+    right: -25vw;
     overflow-y: auto;
     align-items: flex-start;
     animation-name: slideInFromRight;
-    animation-duration: 0.5s; 
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
 }
 
 
-.HeaderDetailsName{
+.HeaderDetailsName {
     font-size: 1.5em;
     font-weight: 600;
     margin-bottom: 0.5em;
-    color:#030D2A;
+    color: #030D2A;
 }
 
-p{
+p {
     font-size: 1em;
     font-weight: 600;
     margin-bottom: 0.5em;
-    color:#030D2A;
+    color: #030D2A;
 }
 
-.Div2Center{
+.Div2Center {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,7 +120,7 @@ p{
     align-items: center;
 }
 
-.DivInfoTop{
+.DivInfoTop {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -131,13 +132,13 @@ p{
 
 }
 
-.EditButton{
+.EditButton {
     border: transparent;
     background-color: transparent;
-    width: 3em; 
+    width: 3em;
 }
 
-.EditButton:hover{
+.EditButton:hover {
     color: white;
     background-color: white;
     cursor: pointer;
@@ -146,7 +147,7 @@ p{
     border-radius: 40px;
 }
 
-.SaveButton{
+.SaveButton {
     background-color: #030D2A;
     color: #ffffff;
     border-radius: 40px;
@@ -164,7 +165,7 @@ p{
     align-items: center;
 }
 
-.SaveButton:hover{
+.SaveButton:hover {
     background-color: #ffffff;
     color: #030D2A;
     border-radius: 40px;
@@ -182,9 +183,27 @@ p{
     align-items: center;
 }
 
-.CancleButton{
+.CancleButton {
     background-color: #d20104;
     color: #ffffff;
+    border-radius: 40px;
+    border: solid;
+    border-color: #d20104;
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: 1em;
+    margin-top: 1em;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CancleButton:hover {
+    background-color: white;
+    color: #d20104;
     border-radius: 40px;
     border: solid;
     border-color: #d20104;

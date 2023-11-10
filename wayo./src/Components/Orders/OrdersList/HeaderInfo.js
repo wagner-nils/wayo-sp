@@ -67,7 +67,8 @@ function HeaderInfo() {
 
                 <div className="box3">
                     <div className="text1">
-                        {`${Number(monthlyRevenue).toFixed(0)}€`}                    </div>
+                        {`${Number(monthlyRevenue).toFixed(0)}€`}                    
+                        </div>
                     <div className="text2">
                         revenue this month
                     </div>
