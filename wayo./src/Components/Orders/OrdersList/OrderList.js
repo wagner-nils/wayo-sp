@@ -1,7 +1,7 @@
 import './OrderList.css';
 import moment from 'moment';
 
-export default function OrderList({ orders }) {
+export default function OrderList({ orders, onOrderSelect }) {
     const getMonthGroups = (orders) => {
         const groups = {};
         orders.forEach(order => {
@@ -23,7 +23,7 @@ export default function OrderList({ orders }) {
                 <div key={month}>
                     <h2>{month}</h2>
                     {monthGroups[month].map(order => (
-                        <div key={order.id} className="box">
+                        <div key={order.id} className="box" onClick={() => onOrderSelect(order)}>
                             <div className="overlap-group">
                                 <div className="orderCompany">{order.orderCompany}</div>
                                 <div className="orderCompanyAbbreviation">{order.orderCompanyAbbreviation}</div>

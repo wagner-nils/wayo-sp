@@ -1,0 +1,113 @@
+.DetailsContainer {
+    color: #030D2A;
+    font-family: 'outfit', sans-serif;
+    height: 42vw; 
+    width: calc(25vw - 7em);
+    box-shadow: 1px 4px 10px #00000013;
+    border-radius: 15px 0 0 15px ;
+    background-color: #f9f9f9;
+    position: fixed; 
+    padding: 1.5em;
+    padding-right: 2em;
+    top: 7em;
+    right: 0;
+    overflow-y: auto; 
+    align-items: flex-start;
+}
+
+.HeaderDetailsName{
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    color:#030D2A;
+}
+
+p{
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    color:#030D2A;
+}
+
+.Div2Center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.CloseButton {
+    background-color: #030D2A;
+    color: #ffffff;
+    border-radius: 40px;
+    border: solid;
+    border-color: #030D2A;
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: 1em;
+    margin-top: 1em;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CloseButton:hover {
+    background-color: #ffffff;
+    color: #030D2A;
+    border-radius: 40px;
+    border: solid;
+    border-color: #030D2A;
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: 1em;
+    margin-top: 1em;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DeleteButton {
+    color: #d20104;
+    border-radius: 40px;
+    border: solid;
+    border-color: #d20104;
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: 1em;
+    margin-top: 1em;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DeleteButton:hover {
+    background-color: #d20104;
+    color: #ffffff;
+    border-radius: 40px;
+    border: solid;
+    border-color: #d20104;
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: 1em;
+    margin-top: 1em;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.EditButton{
+
+}

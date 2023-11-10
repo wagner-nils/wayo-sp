@@ -1,3 +1,8 @@
+html,
+body {
+    margin: 0;
+}
+
 .header {
     padding-top: 1.25em;
     margin-left: 9.75em;
@@ -16,8 +21,12 @@
 
 .RightSection {
     padding: 1em;
-    margin-left: 63em;
-    min-width: 15em;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 5;
+    overflow: hidden;
+    top: 0;
+    right: 0;
 }
 
 
@@ -73,12 +82,12 @@
     transition: 0.25s;
 }
 
-.OrderListTitle{
+.OrderListTitle {
     font-size: 2em;
     font-weight: 600;
     color: #030D2A;
     margin-top: 1em;
     font-family: 'Outfit', sans-serif;
-    text-align: center; 
+    text-align: center;
     height: 100%;
 }
