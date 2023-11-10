@@ -24,14 +24,14 @@ const RevenueTimeline = ({ orders }) => {
         orders.forEach(order => {
             years.add(new Date(order.orderDeadline).getFullYear());
         });
-        return Array.from(years).sort((a, b) => a - b); // Sorted years
+        return Array.from(years).sort((a, b) => a - b);
     };
 
     const years = getYearsFromOrders(orders);
 
     const getRevenueData = (orders, year) => {
-        const weeklyRevenueData = Array.from({ length: 52 }, () => 0); // Initialize weekly revenue data
-        const monthlyRevenueData = Array.from({ length: 12 }, () => 0); // Initialize monthly revenue data
+        const weeklyRevenueData = Array.from({ length: 52 }, () => 0);
+        const monthlyRevenueData = Array.from({ length: 12 }, () => 0);
 
         orders.forEach(order => {
             const orderDate = new Date(order.orderDeadline);
@@ -42,41 +42,25 @@ const RevenueTimeline = ({ orders }) => {
                 const month = orderDate.getMonth();
 
                 weeklyRevenueData[week - 1] += order.orderAmount; // Add weekly revenue
-                monthlyRevenueData[month] += order.orderAmount; // Add monthly revenue
+                monthlyRevenueData[month] += order.orderAmount;
             }
         });
 
         return { weekly: weeklyRevenueData, monthly: monthlyRevenueData };
     };
 
-    
+
     const { weekly: weeklyRevenueData, monthly: monthlyRevenueData } = getRevenueData(orders, selectedYear);
-    
-    const insertBasedOnAverageSlope = (monthlyRevenueData) => {
-        let result = [];
 
-        for (let i = 0; i < monthlyRevenueData.length; i++) {
-            let prev = i === 0 ? 0 : monthlyRevenueData[i - 1];
-            let next = i === monthlyRevenueData.length - 1 ? monthlyRevenueData[i] : monthlyRevenueData[i + 1];
+    const correctedMonthlyRevenue = Array.from({ length: 52 }, (_, weekIndex) => {
+        const monthIndex = Math.floor((weekIndex / 52) * 12); // Spread monthly data evenly
+        const monthlyValue = monthlyRevenueData[monthIndex];
+        const nextMonthValue = monthlyRevenueData[(monthIndex + 1) % 12]; // Circular index
+        const fractionOfNextMonth = (weekIndex % (52 / 12)) / (52 / 12); // Linear interpolation factor
+        return monthlyValue + (nextMonthValue - monthlyValue) * fractionOfNextMonth;
+    });
 
-            // Berechnung der Steigungen
-            let slope1 = monthlyRevenueData[i] - prev;
-            let slope2 = next - monthlyRevenueData[i];
-
-            // Durchschnittliche Steigung
-            let avgSlope = (slope1 + slope2) / 2;
-
-            // Einfügen der drei Zahlen basierend auf der durchschnittlichen Steigung
-            result.push(prev + avgSlope / 4, prev + avgSlope / 2, prev + (3 * avgSlope) / 4);
-
-            // Einfügen der aktuellen Zahl
-            result.push(monthlyRevenueData[i]);
-        }
-
-        return result;
-    }
-
-    const monthlyRevenueData52 = insertBasedOnAverageSlope(monthlyRevenueData);
+    const monthlyRevenueData52 = correctedMonthlyRevenue; // Assign to the variable
 
 
     // Prepare data for chart
@@ -117,6 +101,3 @@ const RevenueTimeline = ({ orders }) => {
 };
 
 export default RevenueTimeline;
-
-
-// it plots the monthly revenue to the weeks, take this into account. Basically the monthly revenue has to be plotted onto every 4th week.
