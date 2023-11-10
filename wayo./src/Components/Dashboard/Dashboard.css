@@ -1,3 +1,11 @@
+/* .background{
+    background: linear-gradient(180deg, #030D2A 0%, rgba(3, 13, 42, 0.85) 100%);
+    width: 100vw;
+    height: 100vw;
+    z-index: -1;
+    position: fixed;
+} */
+
 .Dwaight {
     padding-left: 55em;
     padding-top: 10em;
@@ -15,5 +23,11 @@
     border-bottom-style: solid;
     border-bottom-color: rgb(195, 191, 167);
     position: fixed;
-    background-color: white;
+}
+
+.boxDashboard {
+    padding: 1em;
+    padding-top: 6em;
+    margin-left: 17.5em;
+    z-index: 1;
 }

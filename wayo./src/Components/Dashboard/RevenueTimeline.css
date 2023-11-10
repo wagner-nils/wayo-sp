@@ -1,0 +1,26 @@
+.ARn12{
+    width: 30em;
+    height: 30em;
+    padding-left: 10em;
+
+}
+
+.AR12{
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    width: 30em;
+    height: 30em;
+    background-color: #F2F2F2;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+}
+
+.canvas{
+    width: 30em;
+    height: 30em;
+}
+
+
+/* linear-gradient(180deg, #030D2A 0%, rgba(3, 13, 42, 0.85) 100%) */
