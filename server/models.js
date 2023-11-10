@@ -54,7 +54,7 @@ const orderSchema = new mongoose.Schema({
         required: true
     },
     orderPhone: {
-        type: Number,
+        type: String,
         required: false
     },
     orderDate: {

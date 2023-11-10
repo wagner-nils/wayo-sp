@@ -108,6 +108,84 @@ p{
     align-items: center;
 }
 
-.EditButton{
+.DivInfoTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: solid;
+    border-color: #959595;
+    border-width: 1px;
+    height: 100%;
 
+}
+
+.EditButton{
+    border: none;
+    background-color: transparent;
+    width: 2.5em; 
+
+}
+
+.EditButton:hover{
+    color: #030D2A;
+    cursor: pointer;
+    border: solid;
+    border-color: #030D2A;
+    border-radius: 40px;
+    width: 2.5em; 
+}
+
+.SaveButton{
+    background-color: #030D2A;
+    color: #ffffff;
+    border-radius: 40px;
+    border: solid;
+    border-color: #030D2A;
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: 1em;
+    margin-top: 1em;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SaveButton:hover{
+    background-color: #ffffff;
+    color: #030D2A;
+    border-radius: 40px;
+    border: solid;
+    border-color: #030D2A;
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: 1em;
+    margin-top: 1em;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CancleButton{
+    background-color: #d20104;
+    color: #ffffff;
+    border-radius: 40px;
+    border: solid;
+    border-color: #d20104;
+    width: 10em;
+    height: 2.5em;
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: 1em;
+    margin-top: 1em;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
