@@ -1,19 +1,32 @@
+@keyframes slideInFromRight {
+    from {
+        right: -25vw;
+    }
+    to {
+        right: 0;
+    }
+}
+
 .DetailsContainer {
     color: #030D2A;
     font-family: 'outfit', sans-serif;
     height: 42vw; 
     width: calc(25vw - 7em);
     box-shadow: 1px 4px 10px #00000013;
-    border-radius: 15px 0 0 15px ;
+    border-radius: 15px 0 0 15px;
     background-color: #f9f9f9;
-    position: fixed; 
+    position: fixed;
     padding: 1.5em;
     padding-right: 2em;
     top: 7em;
-    right: 0;
-    overflow-y: auto; 
+    right: -25vw; 
+    overflow-y: auto;
     align-items: flex-start;
+    animation-name: slideInFromRight;
+    animation-duration: 0.5s; 
+    animation-fill-mode: forwards;
 }
+
 
 .HeaderDetailsName{
     font-size: 1.5em;
@@ -47,16 +60,15 @@ p{
     height: 2.5em;
     font-size: 1em;
     font-weight: 600;
-    margin-left: 1em;
-    margin-top: 1em;
     font-family: 'Outfit', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
 }
 
 .CloseButton:hover {
-    background-color: #ffffff;
+    background-color: white;
     color: #030D2A;
     border-radius: 40px;
     border: solid;
@@ -65,12 +77,11 @@ p{
     height: 2.5em;
     font-size: 1em;
     font-weight: 600;
-    margin-left: 1em;
-    margin-top: 1em;
     font-family: 'Outfit', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
 }
 
 .DeleteButton {
@@ -121,19 +132,18 @@ p{
 }
 
 .EditButton{
-    border: none;
+    border: transparent;
     background-color: transparent;
-    width: 2.5em; 
-
+    width: 3em; 
 }
 
 .EditButton:hover{
-    color: #030D2A;
+    color: white;
+    background-color: white;
     cursor: pointer;
     border: solid;
     border-color: #030D2A;
     border-radius: 40px;
-    width: 2.5em; 
 }
 
 .SaveButton{

@@ -127,6 +127,9 @@ function OrderDetails({ order, onClose, onDelete, onUpdate }) {
                                 </svg>
                             </button>
                         </div>
+                        <div className="Div2Center">
+                            <button className='CloseButton' onClick={onClose}>Close</button>
+                        </div>
                         <p>Order Name: </p>{order.orderName}
                         <p>Order Description: </p>{order.orderDescription}
                         <p>Order Deadline: </p>{moment(order.orderDeadline).format('MMMM Do YYYY')}
@@ -147,13 +150,15 @@ function OrderDetails({ order, onClose, onDelete, onUpdate }) {
                         <p>Order Date: </p>{moment(order.orderDate).format('MMMM Do YYYY')}
                         <p>Order Acquisition: </p>{order.orderAcquisition}
                         <div className="Div2Center">
-                            <button className='CloseButton' onClick={onClose}>Close</button>
+                            {/* <button className='CloseButton' onClick={onClose}>Close</button> */}
                             <button className='DeleteButton' onClick={() => {
                                 if (window.confirm("Are you sure you want to delete this order?")) {
                                     onDelete(order._id);
                                 }
                             }}>Delete</button>
                         </div>
+
+
                     </div>
                 )}
             </div>

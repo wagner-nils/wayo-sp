@@ -10,6 +10,7 @@ function OrderTimeline() {
   const [orders, setOrders] = useState([]);
   const [showAddOrder, setShowAddOrder] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState(null);
+  const [orderListKey, setOrderListKey] = useState(0);
 
   useEffect(() => {
     fetchOrders();
@@ -31,7 +32,10 @@ function OrderTimeline() {
       body: JSON.stringify(order),
     })
       .then(response => response.json())
-      .then(newOrder => setOrders(prevOrders => [...prevOrders, newOrder]))
+      .then(newOrder => {
+        setOrders(prevOrders => [...prevOrders, newOrder]);
+        setOrderListKey(prevKey => prevKey + 1);
+      })
       .catch(err => console.error('Error adding order:', err));
   };
 
@@ -52,8 +56,9 @@ function OrderTimeline() {
       method: 'DELETE',
     })
       .then(() => {
-        setOrders(orders.filter(order => order.id !== orderId));
+        setOrders(prevOrders => prevOrders.filter(order => order.id !== orderId));
         setSelectedOrder(null);
+        setOrderListKey(prevKey => prevKey + 1);
       })
       .catch(err => console.error('Error deleting order:', err));
   };
@@ -68,8 +73,9 @@ function OrderTimeline() {
     })
       .then(response => response.json())
       .then(updatedOrder => {
-        setOrders(orders.map(order => order.id === orderId ? updatedOrder : order));
+        setOrders(prevOrders => prevOrders.map(order => order.id === orderId ? updatedOrder : order));
         setSelectedOrder(updatedOrder);
+        setOrderListKey(prevKey => prevKey + 1);
       })
       .catch(err => console.error('Error updating order:', err));
   };
@@ -78,13 +84,13 @@ function OrderTimeline() {
     <>
       <div className="header">Order timeline</div>
       <div className="LeftSection">
-        <div className="HeaderInfo"><HeaderInfos orders={orders} /></div>
+        <div className="HeaderInfo"><HeaderInfos key={orderListKey} orders={orders} /></div>
         <div className="DivList">
           <div className="OrderListTitle">Orders</div>
           <button className="AddButton" onClick={handleAddOrderClick}>Add Order</button>
         </div>
         <div className="OrderList">
-          <OrderList orders={orders} onOrderSelect={handleSelectOrder} />
+          <OrderList key={orderListKey} orders={orders} onOrderSelect={handleSelectOrder} />
         </div>
       </div>
       {showAddOrder && (
