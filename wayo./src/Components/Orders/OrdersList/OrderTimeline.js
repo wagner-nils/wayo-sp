@@ -4,6 +4,7 @@ import HeaderInfos from "./HeaderInfo";
 import AddOrder from "./AddOrder";
 import OrderDetails from "./OrderDetails";
 import './OrderTimeline.css';
+import placeholder from '../../../Pictures/png-frames/placeholder-team-activity.png';
 
 function OrderTimeline() {
   const [orders, setOrders] = useState([]);
@@ -102,6 +103,7 @@ function OrderTimeline() {
             onUpdate={handleUpdateOrder}
           />
         )}
+        <img className="ImagePH" src={placeholder} alt="placeholder-team-activity" />
       </div>
     </>
   );
