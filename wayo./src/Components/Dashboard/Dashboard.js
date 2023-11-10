@@ -27,9 +27,9 @@ function Dashboard() {
         <RevenueTimeline orders={orders} />
       </div>
 
-      {/* <div>
+      <div>
         <RevenueNumbers orders={orders} />
-      </div> */}
+      </div>
 
     </>
   );
