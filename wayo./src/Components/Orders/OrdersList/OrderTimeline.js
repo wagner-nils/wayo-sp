@@ -62,7 +62,7 @@ function OrderTimeline() {
       })
       .catch(err => console.error('Error deleting order:', err));
   };
-
+/*
   const handleUpdateOrder = (orderId, updatedData) => {
     fetch(`http://localhost:3001/orders/${orderId}`, {
       method: 'PUT',
@@ -74,6 +74,30 @@ function OrderTimeline() {
       .then(response => response.json())
       .then(updatedOrder => {
         setOrders(prevOrders => prevOrders.map(order => order.id === orderId ? updatedOrder : order));
+        setSelectedOrder(updatedOrder);
+        setOrderListKey(prevKey => prevKey + 1);
+      })
+      .catch(err => console.error('Error updating order:', err));
+  }; */
+
+  const handleUpdateOrder = (updatedData, orderId) => {
+    console.log('Updating order:', orderId, updatedData);
+
+
+    fetch(`http://localhost:3001/orders/${orderId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedData),
+    })
+      .then(response => response.json())
+      .then(updatedOrder => {
+        setOrders(prevOrders =>
+          prevOrders.map(order =>
+            order._id === orderId ? updatedOrder : order
+          )
+        );
         setSelectedOrder(updatedOrder);
         setOrderListKey(prevKey => prevKey + 1);
       })

@@ -30,8 +30,8 @@ exports.deleteOrder = async (req, res) => {
 exports.updateOrder = async (req, res) => {
   try {
     const newOrder = req.body;
-    newOrder.orderDeadline = new Date(newOrder.orderDeadline.$date);
-    newOrder.orderDate = new Date(newOrder.orderDate.$date);
+    newOrder.orderDeadline = new Date(newOrder.orderDeadline);
+    newOrder.orderDate = new Date(newOrder.orderDate);
     const updatedOrder = await Order.findByIdAndUpdate(req.params.id, newOrder, { new: true });
     res.status(200).send(updatedOrder);
   } catch (err) {

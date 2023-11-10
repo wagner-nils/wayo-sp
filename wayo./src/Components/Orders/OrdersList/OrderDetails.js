@@ -11,7 +11,7 @@ function OrderDetails({ order, onClose, onDelete, onUpdate }) {
     };
 
     const handleUpdate = () => {
-        onUpdate(editData);
+        onUpdate(editData, order._id);
         setIsEditing(false);
     };
 
@@ -167,3 +167,5 @@ function OrderDetails({ order, onClose, onDelete, onUpdate }) {
 }
 
 export default OrderDetails;
+
+
