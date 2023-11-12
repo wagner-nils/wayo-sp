@@ -6,8 +6,8 @@ import './ExpenseTracker.css';
 
 function ExpenseTracker() {
   const [expenses, setExpenses] = useState([]);
-  const [selectedExpense, setSelectedExpense] = useState(null);
   const [showAddExpense, setShowAddExpense] = useState(false);
+  const [selectedExpense, setSelectedExpense] = useState(null);
 
   useEffect(() => {
     fetchExpenses();
@@ -33,6 +33,7 @@ function ExpenseTracker() {
         body: JSON.stringify(expense),
       });
       fetchExpenses();
+      setShowAddExpense(false);
     } catch (err) {
       console.error('Error adding expense:', err);
     }
@@ -63,6 +64,7 @@ function ExpenseTracker() {
         method: 'DELETE',
       });
       fetchExpenses();
+      setSelectedExpense(null);
     } catch (err) {
       console.error('Error deleting expense:', err);
     }
@@ -70,20 +72,30 @@ function ExpenseTracker() {
 
   return (
     <>
-      <div className="header">Expenses</div>
-      <div>Track your Expenses</div>;
-      <div className='MainSection'>
-        <h1>Expense Tracker</h1>
-        <button onClick={() => setShowAddExpense(true)}>Add Expense</button>
-        {showAddExpense && (
-          <AddExpense onSubmit={handleAddExpense} onClose={() => setShowAddExpense(false)} />
-        )}
-        <ExpenseList expenses={expenses} onSelectExpense={handleSelectExpense} />
+      <div className="header">Expense Tracker</div>
+      <div className="LeftSection">
+        <div className="DivList">
+          <div className="OrderListTitle">Expenses</div>
+          <button className="AddButton" onClick={() => setShowAddExpense(true)}>Add Expense</button>
+        </div>
+        <div className="OrderList">
+          <ExpenseList expenses={expenses} onSelectExpense={handleSelectExpense} />
+        </div>
+      </div>
+      {showAddExpense && (
+        <AddExpense
+          onClose={() => setShowAddExpense(false)}
+          onSubmit={handleAddExpense}
+        />
+      )}
+
+      <div className="RightSection">
         {selectedExpense && (
           <ExpenseDetails
             expense={selectedExpense}
-            onUpdate={handleUpdateExpense}
+            onClose={() => setSelectedExpense(null)}
             onDelete={handleDeleteExpense}
+            onUpdate={handleUpdateExpense}
           />
         )}
       </div>

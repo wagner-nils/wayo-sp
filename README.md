@@ -1,5 +1,5 @@
 # wayo-sp
-![wayo. logo](logos/wayo..png)
+![wayo. logo]((wayo./src/Pictures/logos/wayo..png))
 
 ## Description
 wayo. Streamlining Small Business Management

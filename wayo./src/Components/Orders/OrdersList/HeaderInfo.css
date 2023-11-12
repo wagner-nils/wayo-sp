@@ -28,6 +28,7 @@
     font: outfit, sans-serif;
     text-align: center;
     margin-left: 25px;
+    transition: 1s;
 }
 
 .box1 .text2 {
