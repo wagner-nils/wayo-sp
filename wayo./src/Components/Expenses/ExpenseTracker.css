@@ -12,3 +12,10 @@
     position: fixed;
     background-color: white;
 }
+
+.MainSection {
+    padding: 1em;
+    padding-top: 6em;
+    margin-left: 17.5em;
+    z-index: 1;
+}

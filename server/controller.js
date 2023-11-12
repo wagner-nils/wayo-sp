@@ -1,5 +1,4 @@
-const Order = require('./models');
-const Expense = require('./models');
+const { Order, Expense } = require('./models');
 
 // logic for orders
 

@@ -92,15 +92,15 @@ const expenseSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-    orderType: {        // Mitarbeiterlohn / Dienstleistung / Miete / Büromaterial / Versicherung / Steuer / Tech. Equipment / Mobilität / Sonstiges
+    expenseType: {        // Wages / Service / Rent / Office supplies / Insurance / Tax / Tech. Equipment / Mobility / Other
         type: String,
         required: true
     },
-    orderInterval: {    // einmalig / monatlich / quartärlich / jährlich
+    expenseInterval: {    // once / monthly / quarterly / annually
         type: Number,
         required: true
     },
-    expenseStatus: {    // bezahlt / offen / storniert
+    expenseStatus: {    // paid / open / canceled
         type: String,
         required: true
     },
@@ -117,5 +117,4 @@ const expenseSchema = new mongoose.Schema({
 const Order = mongoose.model('Order', orderSchema);
 const Expense = mongoose.model('Expense', expenseSchema);
 
-module.exports = Order;
-module.exports = Expense;
+module.exports = { Order, Expense };
