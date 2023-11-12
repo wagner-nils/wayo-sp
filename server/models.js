@@ -67,6 +67,55 @@ const orderSchema = new mongoose.Schema({
     }
 });
 
+const expenseSchema = new mongoose.Schema({
+    expenseName: {
+        type: String,
+        required: true
+    },
+    expenseDescription: {
+        type: String,
+        required: false
+    },
+    expenseAmount: {
+        type: Number,
+        required: true
+    },
+    expenseVAT: {
+        type: Number,
+        required: true
+    },
+    expenseAddress: {
+        type: String,
+        required: false
+    },
+    expenseDate: {
+        type: Date,
+        required: true
+    },
+    orderType: {        // Mitarbeiterlohn / Dienstleistung / Miete / Büromaterial / Versicherung / Steuer / Tech. Equipment / Mobilität / Sonstiges
+        type: String,
+        required: true
+    },
+    orderInterval: {    // einmalig / monatlich / quartärlich / jährlich
+        type: Number,
+        required: true
+    },
+    expenseStatus: {    // bezahlt / offen / storniert
+        type: String,
+        required: true
+    },
+    expenseCompany: {
+        type: String,
+        required: false
+    },
+    expenseCompanyAbbreviation: {
+        type: String,
+        required: false
+    }
+});
+
 const Order = mongoose.model('Order', orderSchema);
+const Expense = mongoose.model('Expense', expenseSchema);
 
 module.exports = Order;
+module.exports = Expense;
