@@ -18,7 +18,6 @@ function ExpenseDetails({ expense, onClose, onDelete, onUpdate }) {
             <div className="DetailsContainer">
                 {isEditing ? (
                     <div className="EditForm">
-                        {/* Editable fields for expense details */}
                         <input type="text" name="expenseName" value={editData.expenseName} onChange={handleInputChange} />
                         <input type="text" name="expenseDescription" value={editData.expenseDescription} onChange={handleInputChange} />
                         <input type="number" name="expenseAmount" value={editData.expenseAmount} onChange={handleInputChange} />
@@ -40,18 +39,17 @@ function ExpenseDetails({ expense, onClose, onDelete, onUpdate }) {
                             <div className="HeaderDetailsName">Expense Details</div>
                             <button className="EditButton" onClick={() => setIsEditing(true)}>Edit</button>
                         </div>
-                        {/* Display expense details */}
-                        <p>Name: {expense.expenseName}</p>
-                        <p>Description: {expense.expenseDescription}</p>
-                        <p>Amount: {expense.expenseAmount}</p>
-                        <p>VAT: {expense.expenseVAT}</p>
-                        <p>Address: {expense.expenseAddress}</p>
-                        <p>Date: {new Date(expense.expenseDate).toLocaleDateString()}</p>
-                        <p>Type: {expense.expenseType}</p>
-                        <p>Interval: {expense.expenseInterval}</p>
-                        <p>Status: {expense.expenseStatus}</p>
-                        <p>Company: {expense.expenseCompany}</p>
-                        <p>Company Abbreviation: {expense.expenseCompanyAbbreviation}</p>
+                        <p>Name: </p>{expense.expenseName}
+                        <p>Description: </p>{expense.expenseDescription}
+                        <p>Amount: </p>{expense.expenseAmount}
+                        <p>VAT: </p>{expense.expenseVAT}
+                        <p>Address: </p>{expense.expenseAddress}
+                        <p>Date: </p>{new Date(expense.expenseDate).toLocaleDateString()}
+                        <p>Type: </p>{expense.expenseType}
+                        <p>Interval: </p>{expense.expenseInterval}
+                        <p>Status: </p>{expense.expenseStatus}
+                        <p>Company: </p>{expense.expenseCompany}
+                        <p>Company Abbreviation: </p>{expense.expenseCompanyAbbreviation}
                         <button className="DeleteButton" onClick={() => onDelete(expense._id)}>Delete</button>
                         <button className="CloseButton" onClick={onClose}>Close</button>
                     </div>

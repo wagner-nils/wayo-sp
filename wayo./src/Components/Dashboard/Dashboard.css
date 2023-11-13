@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* .background{
-    background: linear-gradient(180deg, #030D2A 0%, rgba(3, 13, 42, 0.85) 100%);
-    width: 100vw;
-    height: 100vw;
-    z-index: -1;
-    position: fixed;
-} */
-
+/* Page Structure */
 .header {
     padding-top: 1.25em;
     margin-left: 9.75em;
@@ -22,9 +15,109 @@
     position: fixed;
 }
 
-.boxDashboard {
+.RightDashboard {
     padding: 1em;
     padding-top: 6em;
     margin-left: 17.5em;
     z-index: 1;
+}
+
+.LeftDashboard{
+    font-weight: 600;
+    color: #030D2A;
+    margin-left: 17.5em;
+}
+
+.Graphics {
+    font: 1.5em 'Outfit', sans-serif;
+    font-weight: 600;
+    color: hsl(225, 87%, 9%);
+    margin: 2em 2em 2em auto;
+    margin-top: 1em;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 40vw;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+canvas {
+    width: 10em;
+    height: auto;
+    padding-top: 0.5em;
+}
+
+select {
+    margin-left: 0.5em;
+    border: 1px solid #ddd;
+    /* Subtle border */
+    border-radius: 4px;
+    /* Rounded corners */
+    padding: 0.5em 1em;
+    font-family: inherit;
+    /* Consistent font */
+    cursor: pointer;
+    background-color: #f8f9fa;
+    /* Light background */
+    transition: all 0.3s ease;
+    /* Smooth transition for interaction */
+}
+
+select:hover,
+select:focus {
+    border-color: #a4b0be;
+    box-shadow: 0 0 0 3px rgba(164, 176, 190, 0.3);
+    /* Subtle focus shadow */
+}
+
+/* Additional styles for the label and header */
+h2 {
+    color: #030D2A;
+    font-size: 1.5em;
+    margin-bottom: 0.75em;
+}
+
+label {
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-bottom: 1em;
+    display: block;
+    text-align: center;
+}
+
+.subHeadings{
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.timeSelection{
+    background-color: #ffffff;
+    color: #030D2A;
+    border-radius: 40px;
+    border: solid;
+    border-color: #030D2A;
+    width: 12em;
+    height: 2.5em;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    margin-right: 1em;
+}
+
+.timeSelection:hover{
+    background-color: #030D2A;
+    color: #ffffff;
+    border-radius: 40px;
+    border: solid;
+    border-color: #030D2A;
+    width: 12em;
+    height: 2.5em;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    margin-right: 1em;
+    transition: 0.2s;
 }
