@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import moment from 'moment';
 
 function ExpenseList({ expenses, onSelectExpense }) {
-    const [filter, setFilter] = useState('all');
     const [selectedYear, setSelectedYear] = useState(moment().year());
     const [selectedMonth, setSelectedMonth] = useState('All');
 
@@ -25,7 +24,7 @@ function ExpenseList({ expenses, onSelectExpense }) {
     const filteredExpenses = allExpenses
         .filter(exp => {
             const expMoment = moment(exp.expenseDate);
-            const matchesYear = selectedYear === 'All' || expMoment.year() === selectedYear;
+            const matchesYear = selectedYear === 'All' || expMoment.year() === Number(selectedYear);
             const matchesMonth = selectedMonth === 'All' || expMoment.format('MMMM') === selectedMonth;
             return matchesYear && matchesMonth;
         })
@@ -33,10 +32,6 @@ function ExpenseList({ expenses, onSelectExpense }) {
 
     return (
         <div>
-            <button onClick={() => setFilter(filter === 'all' ? 'future' : 'all')}>
-                Show {filter === 'all' ? 'Future Expenses' : 'All Expenses'}
-            </button>
-
             <select onChange={(e) => setSelectedYear(e.target.value)} value={selectedYear}>
                 <option value="All">All Years</option>
                 {years.map(year => (
@@ -56,12 +51,7 @@ function ExpenseList({ expenses, onSelectExpense }) {
                         <div className="expense-detail">
                             <div className="expense-name">{expense.expenseName}</div>
                             <div className="expense-amount">{expense.expenseAmount.toFixed(2)} €</div>
-                            <div className="expense-date">{moment(expense.expenseDate).format('MM/DD/YYYY')}</div>
-                            {expense.expenseInterval > 0 && index > 0 && (
-                                <div className="expense-interval">
-                                    ({ordinalSuffixOf(index)} payment)
-                                </div>
-                            )}
+                            <div className="expense-date">{moment(expense.expenseDate).format('DD.MM.YYYY')}</div>
                         </div>
                     </div>
                 ))}
@@ -71,18 +61,3 @@ function ExpenseList({ expenses, onSelectExpense }) {
 }
 
 export default ExpenseList;
-
-function ordinalSuffixOf(i) {
-    let j = i % 10,
-        k = i % 100;
-    if (j === 1 && k !== 11) {
-        return i + "st";
-    }
-    if (j === 2 && k !== 12) {
-        return i + "nd";
-    }
-    if (j === 3 && k !== 13) {
-        return i + "rd";
-    }
-    return i + "th";
-}
