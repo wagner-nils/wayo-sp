@@ -1,37 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
+import './RevenueNumbers.css';
 
 const RevenueNumbers = ({ orders = [], expenses = [] }) => {
-    const [selectedYear, setSelectedYear] = useState('All Years');
+    const [selectedYear, setSelectedYear] = useState('2024');
     const [selectedMonth, setSelectedMonth] = useState('All Months');
 
     //helpers
     const generateYearOptions = () => {
-        const orderYears = new Set(orders.map((order) => new Date(order.orderDeadline).getFullYear()));
-        const expenseYears = new Set(expenses.map((expense) => new Date(expense.expenseDate).getFullYear()));
+        const orderYears = new Set(
+            orders.map((order) => new Date(order.orderDeadline).getFullYear())
+        );
+        const expenseYears = new Set(
+            expenses.map((expense) => new Date(expense.expenseDate).getFullYear())
+        );
 
-        const allYears = Array.from(new Set([...orderYears, ...expenseYears])).sort(); // Sort the years.
+        const allYears = Array.from(new Set([...orderYears, ...expenseYears])).sort();
         const yearOptions = ['All Years', ...allYears];
         return yearOptions;
     };
 
     const generateMonthOptions = () => {
-        const months = new Set(
-            orders.concat(expenses).map((item) => new Date(item.orderDate || item.expenseDate).getMonth())
-        );
-        const allMonths = Array.from(months).sort();
         const monthNames = [
             'January', 'February', 'March', 'April', 'May', 'June',
             'July', 'August', 'September', 'October', 'November', 'December'
         ];
-
-        const sortedMonthNames = allMonths.map(month => monthNames[month]);
-
-        return ['All Months', ...sortedMonthNames];
+        return ['All Months', ...monthNames];
     };
 
     const filterData = (data) => {
         return data.filter((item) => {
-            const itemDate = new Date(item.orderDate || item.expenseDate);
+            const itemDate = new Date(item.orderDeadline || item.expenseDate);
             const matchesYear =
                 selectedYear === 'All Years' || itemDate.getFullYear() === parseInt(selectedYear);
             const matchesMonth =
@@ -46,6 +44,7 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
         const filteredOrders = filterData(orders);
         const filteredExpenses = filterData(expenses);
         const totalOrderAmount = filteredOrders.reduce((sum, order) => sum + order.orderAmount, 0);
+        console.log(totalOrderAmount);
         const totalExpenseAmount = filteredExpenses.reduce((sum, expense) => sum + expense.expenseAmount, 0);
         return totalOrderAmount - totalExpenseAmount;
     };
@@ -54,6 +53,10 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
         const filteredExpenses = filterData(expenses);
         const totalExpenseAmount = filteredExpenses.reduce((sum, expense) => sum + expense.expenseAmount, 0);
         return totalExpenseAmount;
+    };
+
+    const profitMargin = () => {
+        return calculateProjectedProfits() / calculateProjectedExpenses();
     };
 
     const calculateVATToBePaid = () => {
@@ -126,9 +129,37 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
     const totalRevenuePerYear = () => {
         const filteredOrders = filterData(orders);
         const totalOrderAmount = filteredOrders.reduce((sum, order) => sum + order.orderAmount, 0);
-        const numberOfOrders = filteredOrders.length;
-        return 0; // Implement your logic for total revenue per year calculation here
+
+        const yearsCounted = filteredOrders.reduce((years, order) => {
+            const date = new Date(order.orderDate);
+            const yearKey = `${date.getFullYear()}`;
+            years.add(yearKey);
+            return years;
+        }, new Set()).size;
+
+        return yearsCounted === 0 ? 0 : totalOrderAmount / yearsCounted;
     };
+
+    // const calculatedRevenueYearToday = () => {
+    //     const filteredOrders = filterData(orders);
+    //     const totalOrderAmount = filteredOrders.reduce((sum, order) => sum + order.orderAmount, 0);
+    // };
+
+    const getOrderTypeDistribution = () => {
+        const filteredOrders = filterData(orders);
+        const orderTypes = filteredOrders.reduce((types, order) => {
+            types[order.orderType] = types[order.orderType] + 1 || 1;
+            return types;
+        }, {});
+
+        const totalOrders = Object.values(orderTypes).reduce((sum, count) => sum + count, 0);
+        const orderTypeDistribution = Object.entries(orderTypes).map(([type, count]) => {
+            const percentage = ((count / totalOrders) * 100).toFixed(2);
+            return `${type}: ${percentage}%`;
+        });
+
+        return orderTypeDistribution.join('\n');
+    }
 
     return (
         <>
@@ -145,9 +176,11 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
                 <div className="ProjectedProfits">{calculateProjectedProfits()}</div>
                 <div className="ProjectedExpenses">Projected Expenses</div>
                 <div className="ProjectedExpenses">{calculateProjectedExpenses()}</div>
+                <div className="ProfitMargin">Profit Margin</div>
+                <div className="ProfitMargin">{profitMargin()}</div>
                 <div className="VATToBePayed">VAT to be payed</div>
                 <div className="VATToBePayed">{calculateVATToBePaid()}</div>
-                <div className="CustomerAcquisitionCost">CACost</div>
+                <div className="CustomerAcquisitionCost">CAC</div>
                 <div className="CustomerAcquisitionCost">{calculateCustomerAcquisitionCost()}</div>
                 <div className="AverageDealSize">Average Deal Size</div>
                 <div className="AverageDealSize">{calculateAverageDealSize()}</div>
@@ -161,6 +194,8 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
                 <div className="AverageRevenuePerMonth">{calculateAverageRevenuePerMonth()}</div>
                 <div className="TotalRevenuePerYear">Total Revenue Per Year</div>
                 <div className="TotalRevenuePerYear">{totalRevenuePerYear()}</div>
+                <div className="OrderTypeDistribution">Order Type Distribution</div>
+                <div className="OrderTypeDistribution">{getOrderTypeDistribution()}</div>
             </div>
         </>
     );

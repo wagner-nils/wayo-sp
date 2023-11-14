@@ -64,7 +64,7 @@ function Dashboard() {
       <div className="alignment">
 
         <div className="LeftDashboard">
-          <RevenueNumbers orders={orders} />
+          <RevenueNumbers orders={orders} expenses={expenses} />
         </div>
 
         <div className="RightDashboard">

@@ -127,15 +127,4 @@ label {
     transition: 0.2s;
 }
 
-.ListNumbers{
-    padding-top: 1em;
-}
-
-.ButtonWrapper{
-    display: flex;
-    justify-content: row;
-    align-items: center;
-    padding-top: 1em;
-    padding-bottom: 0.5em;
-}
 
