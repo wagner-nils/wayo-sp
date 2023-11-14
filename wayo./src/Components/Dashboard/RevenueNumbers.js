@@ -116,15 +116,8 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
     const calculateAverageRevenuePerMonth = () => {
         const filteredOrders = filterData(orders);
         const totalOrderAmount = filteredOrders.reduce((sum, order) => sum + order.orderAmount, 0);
-
-        const monthsCounted = filteredOrders.reduce((months, order) => {
-            const date = new Date(order.orderDate);
-            const monthYearKey = `${date.getFullYear()}-${date.getMonth()}`;
-            months.add(monthYearKey);
-            return months;
-        }, new Set()).size;
-
-        return monthsCounted === 0 ? 0 : totalOrderAmount / monthsCounted;
+        const averageRevenuePerMonth = totalOrderAmount / 12;
+        return averageRevenuePerMonth;
     };
 
     const totalRevenuePerYear = () => {
@@ -148,10 +141,10 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
     };
 
 
-    // const calculatedRevenueYearToday = () => {
-    //     const filteredOrders = filterData(orders);
-    //     const totalOrderAmount = filteredOrders.reduce((sum, order) => sum + order.orderAmount, 0);
-    // };
+    const calculatedRevenueYearToday = () => {
+        const filteredOrders = filterData(orders);
+        const totalOrderAmount = filteredOrders.reduce((sum, order) => sum + order.orderAmount, 0);
+    };
 
     const getOrderTypeDistribution = () => {
         const filteredOrders = filterData(orders);
@@ -166,8 +159,12 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
             return `${type}: ${percentage}%`;
         });
 
-        return orderTypeDistribution.join('\n');
-    }
+        return orderTypeDistribution//.join('\n');
+    };
+
+
+    // pie chart
+    
 
     return (
         <>
@@ -248,10 +245,10 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
                     </div>
 
                 </div>
-                <div className="OrderTypeDistribution">
+                {/* <div className="OrderTypeDistribution">
                     <div>{getOrderTypeDistribution()}</div>
                     Order Type Distribution
-                </div>
+                </div> */}
             </div>
         </>
     );

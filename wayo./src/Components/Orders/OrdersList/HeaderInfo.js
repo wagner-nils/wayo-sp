@@ -70,7 +70,7 @@ function HeaderInfo() {
                         {`${Number(monthlyRevenue).toFixed(0)}€`}                    
                         </div>
                     <div className="text2">
-                        revenue this month
+                        acquired revenue this month
                     </div>
                 </div>
             </div>
