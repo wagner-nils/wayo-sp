@@ -129,17 +129,24 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
 
     const totalRevenuePerYear = () => {
         const filteredOrders = filterData(orders);
+
+        if (filteredOrders.length === 0) {
+            return 0;
+        }
+
         const totalOrderAmount = filteredOrders.reduce((sum, order) => sum + order.orderAmount, 0);
 
-        const yearsCounted = filteredOrders.reduce((years, order) => {
+        const uniqueYears = new Set();
+        filteredOrders.forEach((order) => {
             const date = new Date(order.orderDate);
-            const yearKey = `${date.getFullYear()}`;
-            years.add(yearKey);
-            return years;
-        }, new Set()).size;
+            uniqueYears.add(date.getFullYear().toString());
+        });
 
-        return yearsCounted === 0 ? 0 : totalOrderAmount / yearsCounted;
+        const yearsCounted = uniqueYears.size;
+
+        return totalOrderAmount / yearsCounted;
     };
+
 
     // const calculatedRevenueYearToday = () => {
     //     const filteredOrders = filterData(orders);
@@ -180,29 +187,30 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
                         Projected Profits
                     </div>
                     <div className="ProjectedExpenses">
-                    <div className='num'>{numeral(calculateProjectedExpenses()).format('0,0€')}€</div>
+                        <div className='num'>{numeral(calculateProjectedExpenses()).format('0,0€')}€</div>
                         Projected Expenses
                     </div>
 
                     <div className="ProfitMargin">
-                    <div className='num'>{profitMargin().toFixed(2)}%</div>
+                        <div className='num'>{profitMargin().toFixed(2)}%</div>
                         Profit Margin
                     </div>
                 </div>
 
                 <div className="secondLine">
                     <div className="VATToBePayed">
-                        <div className='num'>{calculateVATToBePaid()}</div>
+                        <div className='num'>{numeral(calculateVATToBePaid().toFixed(2)).format('0,0.0€')}€</div>
                         VAT to be paid
                     </div>
 
                     <div className="CustomerAcquisitionCost">
-                        <div className='num'>{calculateCustomerAcquisitionCost()}</div>
+                        <div className='num'>{numeral(calculateCustomerAcquisitionCost()).format('0,00€')}€</div>
                         CAC
                     </div>
 
                     <div className="AverageDealSize">
-                        <div className='num'>{calculateAverageDealSize()}</div>
+                        <div className='num'>{numeral(calculateAverageDealSize()).format('0,0€')}€
+                        </div>
                         Average Deal Size
                     </div>
                 </div>
@@ -214,31 +222,35 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
                     </div>
 
                     <div className="SalesCycleLength">
-                        <div className='num'>{calculateSalesCycleLength()}</div>
+                        <div className='num'>{calculateSalesCycleLength().toFixed(2)}</div>
                         Sales Cycle Length
                     </div>
 
                     <div className="EmployeeTurnoverRate">
-                        <div className='num'>{calculateEmployeeTurnoverRate()}</div>
+                        <div className='num'>{numeral(calculateEmployeeTurnoverRate()).format('0,0€')}€</div>
                         Employee Turnover Rate
                     </div>
                 </div>
 
                 <div className="fourthLine">
                     <div className="AverageRevenuePerMonth">
-                        <div className='num'>{calculateAverageRevenuePerMonth()}</div>
+                        <div className='num'>{numeral(calculateAverageRevenuePerMonth()).format('0,0€')}€</div>
                         Average Revenue Per Month
                     </div>
 
                     <div className="TotalRevenuePerYear">
-                        <div className='num'>{totalRevenuePerYear()}</div>
+                        <div className='num'>{numeral(totalRevenuePerYear()).format('0,0€')}€</div>
                         Total Revenue Per Year
                     </div>
+                    <div className="placeholder">
+                        <div className='num'></div>
 
-                    <div className="OrderTypeDistribution">
-                        <div>{getOrderTypeDistribution()}</div>
-                        Order Type Distribution
                     </div>
+
+                </div>
+                <div className="OrderTypeDistribution">
+                    <div>{getOrderTypeDistribution()}</div>
+                    Order Type Distribution
                 </div>
             </div>
         </>
