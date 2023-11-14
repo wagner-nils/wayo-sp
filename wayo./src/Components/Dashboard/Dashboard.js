@@ -61,12 +61,15 @@ function Dashboard() {
     <>
       <div className="header">KPI Dashboard</div>
 
-      <div className="LeftDashboard">
-        <RevenueNumbers orders={orders} />
-      </div>
-      
-      <div className="RightDashboard">
-        <RevenueTimeline orders={orders} expenses={expenses} startingBalance={startingBalance} />
+      <div className="alignment">
+
+        <div className="LeftDashboard">
+          <RevenueNumbers orders={orders} />
+        </div>
+
+        <div className="RightDashboard">
+          <RevenueTimeline orders={orders} expenses={expenses} startingBalance={startingBalance} />
+        </div>
       </div>
     </>
   );
