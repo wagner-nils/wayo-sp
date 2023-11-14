@@ -22,6 +22,7 @@
     padding: 1em;
     padding-top: 6em;
     margin-left: 17.5em;
+    margin-right: 4em;
     z-index: 1;
 }
 
@@ -38,10 +39,9 @@
     font: 1.5em 'Outfit', sans-serif;
     font-weight: 600;
     color: hsl(225, 87%, 9%);
-    margin: 2em 2em 2em auto;
+    margin-left: 1.5em;
     margin-top: 1em;
-    margin-bottom: 20px;
-    width: 80%;
+    width: 100%;
     max-width: 40vw;
     background-color: #fff;
     border-radius: 15px;

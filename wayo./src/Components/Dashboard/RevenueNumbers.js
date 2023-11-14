@@ -1,4 +1,5 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
+import numeral from 'numeral';
 import './RevenueNumbers.css';
 
 const RevenueNumbers = ({ orders = [], expenses = [] }) => {
@@ -171,31 +172,74 @@ const RevenueNumbers = ({ orders = [], expenses = [] }) => {
                     {generateMonthOptions().map((month, index) => <option key={index} value={index}>{month}</option>)}
                 </select>
             </div>
+
             <div className="ListNumbers">
-                <div className="ProjectedProfits">Projected Profits</div>
-                <div className="ProjectedProfits">{calculateProjectedProfits()}</div>
-                <div className="ProjectedExpenses">Projected Expenses</div>
-                <div className="ProjectedExpenses">{calculateProjectedExpenses()}</div>
-                <div className="ProfitMargin">Profit Margin</div>
-                <div className="ProfitMargin">{profitMargin()}</div>
-                <div className="VATToBePayed">VAT to be payed</div>
-                <div className="VATToBePayed">{calculateVATToBePaid()}</div>
-                <div className="CustomerAcquisitionCost">CAC</div>
-                <div className="CustomerAcquisitionCost">{calculateCustomerAcquisitionCost()}</div>
-                <div className="AverageDealSize">Average Deal Size</div>
-                <div className="AverageDealSize">{calculateAverageDealSize()}</div>
-                <div className="ClientRetentionRate">Client Retention Rate</div>
-                <div className="ClientRetentionRate">{calculateClientRetentionRate()}</div>
-                <div className="SalesCycleLength">Sales Cycle Length</div>
-                <div className="SalesCycleLength">{calculateSalesCycleLength()}</div>
-                <div className="EmployeeTurnoverRate">Employee Turnover Rate</div>
-                <div className="EmployeeTurnoverRate">{calculateEmployeeTurnoverRate()}</div>
-                <div className="AverageRevenuePerMonth">Average Revenue Per Month</div>
-                <div className="AverageRevenuePerMonth">{calculateAverageRevenuePerMonth()}</div>
-                <div className="TotalRevenuePerYear">Total Revenue Per Year</div>
-                <div className="TotalRevenuePerYear">{totalRevenuePerYear()}</div>
-                <div className="OrderTypeDistribution">Order Type Distribution</div>
-                <div className="OrderTypeDistribution">{getOrderTypeDistribution()}</div>
+                <div className="firstLine">
+                    <div className="ProjectedProfits">
+                        <div className='num'>{numeral(calculateProjectedProfits()).format('0,0€')}€</div>
+                        Projected Profits
+                    </div>
+                    <div className="ProjectedExpenses">
+                    <div className='num'>{numeral(calculateProjectedExpenses()).format('0,0€')}€</div>
+                        Projected Expenses
+                    </div>
+
+                    <div className="ProfitMargin">
+                    <div className='num'>{profitMargin().toFixed(2)}%</div>
+                        Profit Margin
+                    </div>
+                </div>
+
+                <div className="secondLine">
+                    <div className="VATToBePayed">
+                        <div className='num'>{calculateVATToBePaid()}</div>
+                        VAT to be paid
+                    </div>
+
+                    <div className="CustomerAcquisitionCost">
+                        <div className='num'>{calculateCustomerAcquisitionCost()}</div>
+                        CAC
+                    </div>
+
+                    <div className="AverageDealSize">
+                        <div className='num'>{calculateAverageDealSize()}</div>
+                        Average Deal Size
+                    </div>
+                </div>
+
+                <div className="thirdLine">
+                    <div className="ClientRetentionRate">
+                        <div className='num'>{calculateClientRetentionRate()}</div>
+                        Client Retention Rate
+                    </div>
+
+                    <div className="SalesCycleLength">
+                        <div className='num'>{calculateSalesCycleLength()}</div>
+                        Sales Cycle Length
+                    </div>
+
+                    <div className="EmployeeTurnoverRate">
+                        <div className='num'>{calculateEmployeeTurnoverRate()}</div>
+                        Employee Turnover Rate
+                    </div>
+                </div>
+
+                <div className="fourthLine">
+                    <div className="AverageRevenuePerMonth">
+                        <div className='num'>{calculateAverageRevenuePerMonth()}</div>
+                        Average Revenue Per Month
+                    </div>
+
+                    <div className="TotalRevenuePerYear">
+                        <div className='num'>{totalRevenuePerYear()}</div>
+                        Total Revenue Per Year
+                    </div>
+
+                    <div className="OrderTypeDistribution">
+                        <div>{getOrderTypeDistribution()}</div>
+                        Order Type Distribution
+                    </div>
+                </div>
             </div>
         </>
     );
